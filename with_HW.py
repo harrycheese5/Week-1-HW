@@ -7,4 +7,15 @@ file_variable.close
 file_object = open('example.txt','r')
 for line in file_object:
   print(line)
-file_object.close()
+file_object.close() 
+num_list = open('num_list.txt','r')
+line = num_list.readline()
+sum = 0
+while line != '': # While line is not blank
+  sum += int(line)
+  line = num_list.readline()
+num_list.close()
+print(f'The sum of the numbers in the list is {sum}')
+  with open('list.txt','w') as outfile:
+    for number in range(17):
+      outfile.write(f'{number}\n')
