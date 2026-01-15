@@ -1,0 +1,36 @@
+def greet_user(name):
+    """Prints a greeting message."""
+    print(f"Hello, {name}!")
+
+def count_items(items_list):
+    """Counts items in a list, using 'break' to stop early if a specific item is found."""
+    count = 0
+    for item in items_list:
+        if item == "stop":
+            print("Found 'stop' keyword. Exiting loop early.")
+            break # Exits the loop immediately
+        count += 1
+        print(f"Processed item: {item}")
+    return count
+
+def farewell_user():
+    """Prints a farewell message."""
+    print("Goodbye!")
+
+def main():
+    """The main entry point of the program."""
+    user_name = "Michael"
+    items = ["apple", "banana", "cherry", "stop", "date", "elderberry"]
+
+    # Call the greeting function
+    greet_user(user_name)
+
+    # Call the counting function with a loop and 'break'
+    num_items_counted = count_items(items)
+    print(f"Total items processed before 'stop': {num_items_counted}")
+
+    # Call the farewell function
+    farewell_user()
+
+if __name__ == "__main__":
+    main()
