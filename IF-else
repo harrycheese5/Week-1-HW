@@ -1,0 +1,11 @@
+num = int(input('How many dogs do you have?'))
+if num == 3:
+	print('Thats the same number of dogs i have too!')
+else: 
+	print(f' I have 3 dogs, but {num} dogs is cool too!')
+
+breed = input("What is your favorite dog breed?")
+if breed == "Australian Shepard":
+	print("That’s my favorite breed too!")
+else:
+	print(f"Oooo, {breed} is a cool dog breed")
