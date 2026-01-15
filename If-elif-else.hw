@@ -1,0 +1,20 @@
+#Name: Michael M
+#Period 6
+#If Elif And Else HW
+#Time Spent 30 mintues
+#Sets a secret number for the user to guess
+secret_number = 3
+#Asks the user for a guess number
+guess = input("Guess the secret number: ")
+#This is when the user gets the secret number.
+if guess == "3":
+    print("You got it!")
+#If the user guesses a number too high it will give this message
+elif guess > "3":
+    print("Thats too high :/")
+#IF the user inputes a number thats lower than the secret number
+elif guess < "3":
+    print("Your guess is too low :/")
+#This is the case if the user doesn't choose a number at all.
+else:
+    print("Dude, choose a number")
