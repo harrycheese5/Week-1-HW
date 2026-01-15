@@ -1,0 +1,27 @@
+#Name: Michael Mcadams
+#Period 6
+#Logical Operators Practice
+#Time Spent 45 mintues
+#checks if the user did NOT enter "yes" and asks for the users input
+answer = input("Do you like cats? (yes/no): ")
+if not answer == "yes":
+    print("wow you don’t like cats.")
+else:
+    print("Cool I do too!")
+#checks if the user is either too young or too old by asking them to enter their age
+age = int(input("Enter your age: "))
+if age < 5 or age > 100:
+    print("thats a new one")
+else:
+    print("Thats a great age!")
+#runs a if code to checks if both conditions are true
+temp = int(input("What’s the temperature outside? "))
+if temp > 60 and temp < 90:
+    print("perfect weather")
+else:
+    print("either you live in antarctica or a desert")
+#this part checks if someone is old enough and likes cats, OR if they entered a special word
+if (age >= 10 and answer == "yes") or temp == 75:
+    print("You meet the special condition, good job")
+else:
+    print("You don’t meet the special condition...sorry")
