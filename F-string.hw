@@ -1,0 +1,29 @@
+#Name: Michael M
+#Period 6
+#receipt maker
+#Time Spent 30 minutes
+order1 = input("Enter order #1: ")
+cost1 = float(input(f"Enter the cost of {order1}: $"))
+
+order2 = input("Enter order #2: ")
+cost2 = float(input(f"Enter the cost of {order2}: $"))
+order3 = input("Enter order #2: ")
+cost3 = float(input(f"Enter the cost of {order3}: $"))
+
+order4 = input("Enter order #4: ")
+cost4 = float(input(f"Enter the cost of {order4}: $"))
+
+order5 = input("Enter order #5: ")
+cost5 = float(input(f"Enter the cost of {order5}: $"))
+
+total = cost1 + cost2 + cost3 + cost4 + cost5
+
+print(f"""
+======RReceipt=======
+{order1:<56} ${cost1:>8.9f}
+{order2:<56} ${cost2:>8.9f}
+{order3:<56} ${cost3:>8.9f}
+{order4:<56} ${cost4:>8.9f}
+{order5:<56} ${cost5:>8.9f}
+========FinAL=====:          ${total:.2f}
+""")
