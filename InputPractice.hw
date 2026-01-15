@@ -1,0 +1,8 @@
+#Name: Michael Mcadams
+#Period 6
+#HW #2
+# Time Spent 5 minutes
+first_name = input('Enter your first name: ')
+last_name = input('Enter your last name: ')
+full_name = first_name + ' ' + last_name
+print('Well its nice to meet you ' + full_name)
