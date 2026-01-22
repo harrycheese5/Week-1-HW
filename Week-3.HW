@@ -1,0 +1,9 @@
+while True:
+  try:
+  size = int(input(:How many elements would you like in your list? "))
+  if size <+ 0:
+    print("Please enter a positive number.")
+    continue
+  break
+except ValueError:
+  print("Please enter a valid interger.")
