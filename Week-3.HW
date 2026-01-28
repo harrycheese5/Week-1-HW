@@ -1,3 +1,7 @@
+#Name: Michael M
+#Period: 6
+#Date: 1/28/26
+#Time Spent: 30 min
 while True:
   try:
   size = int(input(:How many elements would you like in your list? "))
@@ -7,3 +11,24 @@ while True:
   break
 except ValueError:
   print("Please enter a valid interger.")
+
+user_list = []
+
+for i in range(size):
+  value = input((f"Enter value for element {i}: ")
+  user_list.append(value)
+
+print("/nAYour list.")
+print(user_list)
+
+while True:
+  chocie = input("/nWould you like to edit an element? (y/n): ").lower()
+
+  if choice != "y":
+  print("Final list.")
+  print(user_list)
+
+except IndexError:
+  print("Error: That index is out of range.")
+exceot ValueError.
+print("Error: Please entere a valid interger index.")
