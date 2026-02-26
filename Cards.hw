@@ -1,0 +1,48 @@
+#Name:Michael Mcadams
+#Period 6
+#CARDS HOMEWORK
+#Time Spent 30 min
+import random
+#creating the decks with the suits ranks and values. 
+deck_t = (
+        (s, k, (2,3,4,5,6,7,8,9,10,11,12,13,14)[
+                (2,3,4,5,6,7,8,9,10, 'J', 'Q', 'K', 'A').index(k)
+        ])
+        for s in ('♠', '♥', '♦', '♣')
+        for k in (2,3,4,5,6,7,8,9,10,'J', 'Q', 'K', 'A')
+)
+#the suits order if a tie breaker situation would happen
+deck = list(deck_t)
+suit_order = {'♠':4, '♥':3, '♦':2, '♣':1}
+#deals a random card to the player/user
+player_card = random.choice(deck)
+deck.remove(player_card)
+print('your card is:', player_card)
+#gives the user a option to discards their cards only 3.
+discards = 0
+while discards < 3:
+        choice = input("would you like to discard your card? (y/n) ").lower()
+        if choice == "y":
+                player_card = random.choice(deck)
+                deck.remove(player_card)
+                discards += 1
+                print('new card:', player_card)
+        else:
+                break
+#now its the codes turn to draw a card so we can just repeat the process again.
+computer_card = random.choice(deck)
+deck.remove(computer_card)
+print('computers card:', computer_card)
+#determine the winner based on the value of the suits and numeer
+if player_card[2] > computer_card[2]:
+        print('you beat code')
+elif player_card[2] < computer_card[2]:
+        print('you got yo stuff ran by some code.')
+
+else:
+        if suit_order[player_card[0]] > suit_order[computer_card[0]]:
+                print('you barely win!')
+        elif suit_order[player_card[0]] < suit_order[computer_card[0]]:
+                print("the code wins by suit")
+        else:
+                print("bruh yall tie. DO YOU KNOW HOW HARD IT IS TO TIE LIKE ACTTAULY UR BAD")
