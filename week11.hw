@@ -1,0 +1,11 @@
+#Michael M
+#Period 6 
+#Week 11
+#Time spent 10m
+from classes import Student
+student1 = Student("Alice")
+student2 = Student("Bob")
+student1.set_grade(90)
+student2.set_grade(85)
+student1.display_info()
+student2.display_info()
