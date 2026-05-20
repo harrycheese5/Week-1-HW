@@ -1,0 +1,18 @@
+#Michael McAdams
+#period 6
+#week 15
+#time spent 
+def fibonacci_value(position):
+  if position <= 1:
+    return position 
+  return fibonacci_value(position - 1) + fibonacci_value(position - 2)
+
+
+total_terms = int(input("How many Fibonacci terms would you like? "))
+
+print("Fibonacci sequence:")
+
+counter = 0
+while counter < total_terms:
+  print(fibonacci_value(counter))
+  counter+= 1
