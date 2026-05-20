@@ -1,0 +1,58 @@
+#Michael Mcadams
+#Period 6
+#Week 14
+#time spent 30m
+
+
+class CharacterBase: 
+  def __init__(self,hero_name, hp, strength, rank):
+    self._hero_name = hero_name
+    self._hp = hp
+    self._strength = strength
+    self._rank = rank
+
+  def name(self):
+    return self._hero_name
+
+  def show_attack(self):
+    print(f"{self._hero_name) attacks using {self._strength}")
+
+  def lose_health(self):
+    self._hp -= 10
+    print(f"{self._hero_name) takes damage")
+
+  def stats(self):
+    details = {
+      "name": self._hero_name,
+      "health": self._hp,
+      "attack": self._strength,
+      "level": self._rank
+    }
+
+    for key, value in details.items():
+      print(f"{key}: {value}")
+
+
+class SamuraiWarrior(CharacterBase):
+  def __init__(self, hero_name, hp, strength, rank, sheild):
+    super().__init__(hero_name, hp, strength, rank)
+    self._sheild = sheild
+
+  def lose_health(self):
+    print(f"{self.name()} uses the armor") 
+
+  def defend(self):
+    print(f"{self.name()} blocks the attack") 
+
+
+
+class MagicUser(CharacterBase):
+    def __init__(self, hero_name, hp, strength, rank, mana):
+      super().__init__(hero_name, hp, strength, rank)
+      self._mana = mana
+
+    def show_attack(self):
+      print(f"{self.name()} casts a powerful spell")
+
+    def restore_health(self):
+      print(f"{self.name()} casts a heal spell")
