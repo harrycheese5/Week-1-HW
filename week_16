@@ -1,0 +1,32 @@
+from tkinter import * 
+from tkinter import messagebox
+
+root = Tk()
+root.title("GUI")
+
+def submit():
+  label.config(text=entry.get())
+  messagebox.showinfo("Message", "Text Submitted")
+
+def select(event):
+  if box.get(box.curselection()) == "Python":
+    messagebox.showinfo("Listbox", "Python Selected") 
+
+entry = Entry(root)
+entry.pack()
+
+label = Label(root, text="Output")
+label.pack()
+
+Button(root, text="Submit", command=submit).pack()
+
+box = Listbox(root)
+for item in ["Python", "Java", "C++", "Ruby", "HTML"]:
+  box.insert(END, item)
+
+box.pack()
+box.bind("<<ListboxSelect>>", select)
+
+Button(root, text="Quit", command=root.destroy).pack()
+
+root.mainloop()
