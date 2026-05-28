@@ -1,0 +1,53 @@
+from datetime import datetime
+
+
+# Base class 
+class Task:  
+  def __init__(self,title,due_date, priority):
+      self.title = title
+      self.due_date = due_date
+      self.priority = priority 
+      self.completed = False
+
+    def mark_complete(self):
+      self.completed = True
+
+    def display(self):
+      status = "Done" if self.completed else "Not Done"
+        print(
+          f"{self.title} Due: {self.due_date} "
+          f"Priority: {self.priority} {status}"
+          )
+
+
+# Homework task
+class HomeworkTask(Task):
+  def __init__(self, title, due_date, priority, subject, estimated_time):
+  super().__init__(title, due_date, priority)
+  self.subject = subject
+  self.estimated_time = estimated_time
+
+def display(self):
+  status = "Done" if self completed else "Not Done"
+  print(
+    f"[Homework] {self.title} Subject: {self.subject} "
+    f"Due: {self.due_date} Priority: {self.priority} "
+    f"Time: {self.estimated_time} mins {status}"
+    )
+
+# Project task
+class ProjectTask(Task):
+  def __init__(self, title, due_date, priority, subject, estimated_time):
+    super().__init__(title, due_date, priority)
+    self.subject = subject
+    self.estimated_time = estimated_time
+
+  def display(self): 
+    status = "DOne" if slef.completed else "Not Done"
+    print(
+    f"[Project] {self.title} Subject: {self.subject} "
+    f"Due: {self.due_date Priority: {self.priority} "
+    f"Time: {self.estimated_time} mins {status}"
+    )
+
+# User class
