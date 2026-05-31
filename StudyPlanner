@@ -4,10 +4,10 @@ from datetime import datetime
 # Base class 
 class Task:  
     def __init__(self,title,due_date, priority):
-      self.title = title
-      self.due_date = due_date
-      self.priority = priority 
-      self.completed = False
+        self.title = title
+        self.due_date = due_date
+        self.priority = priority 
+        self.completed = False
 
     def mark_complete(self):
         self.completed = True
@@ -15,80 +15,95 @@ class Task:
     def display(self):
         status = "Done" if self.completed else "Not Done"
         print(
-              f"{self.title} Due: {self.due_date} "
-              f"Priority: {self.priority} {status}"
-              )
+            f"{self.title} Due: {self.due_date} "
+            f"Priority: {self.priority} {status}"
+        )
 
 
 # Homework task
 class HomeworkTask(Task):
     def __init__(self, title, due_date, priority, subject, estimated_time):
         super().__init__(title, due_date, priority)
-    self.subject = subject
-    self.estimated_time = estimated_time
+        self.subject = subject
+        self.estimated_time = estimated_time
 
-def display(self):
-  status = "Done" if self.completed else "Not Done"
-  print(
-    f"[Homework] {self.title} Subject: {self.subject} "
-    f"Due: {self.due_date} Priority: {self.priority} "
-    f"Time: {self.estimated_time} mins {status}"
-    )
+    def display(self):
+        status = "Done" if self.completed else "Not Done"
+        print(
+            f"[Homework] {self.title} Subject: {self.subject} "
+            f"Due: {self.due_date} Priority: {self.priority} "
+            f"Time: {self.estimated_time} mins {status}"
+        )
 
 # Project task
 class ProjectTask(Task):
-  def __init__(self, title, due_date, priority, subject, estimated_time):
-    super().__init__(title, due_date, priority)
-    self.subject = subject
-    self.estimated_time = estimated_time
+    def __init__(self, title, due_date, priority, subject, estimated_time):
+        super().__init__(title, due_date, priority)
+        self.subject = subject
+        self.estimated_time = estimated_time
 
-  def display(self): 
-    status = "Done" if self.completed else "Not Done"
-    print(
-    f"[Project] {self.title} Subject: {self.subject} "
-    f"Due: {self.due_date} Priority: {self.priority} "
-    f"Time: {self.estimated_time} mins {status}"
-    )
+    def display(self): 
+        status = "Done" if self.completed else "Not Done"
+        print(
+            f"[Project] {self.title} Subject: {self.subject} "
+            f"Due: {self.due_date} Priority: {self.priority} "
+            f"Time: {self.estimated_time} mins {status}"
+        )
 
 # User class
 class User: 
     def __init__(self, name, available_time):
-    self.name = name
-    self.available_time = available_time
-    self.tasks = []
+        self.name = name
+        self.available_time = available_time
+        self.tasks = []
+ 
+    def add_task(self, task):
+        self.tasks.append(task)
 
-def add_task(self, task):
-    self.tasks.append(task)
-
-def remove_task(self, title):
-    for task in self.tasks:
-        if task.title == title:
-            self.tasks.remove(task)
-
-def show_tasks(self);
-    print("/n--- Task Dashboard ---")
-    for task in sorted(self.tasks, key=lambda t: t.due_date):
-        task.display()
-
-def suggest_schedule(self):
-    print("/n--- Suggested Study Schedule ---")
-
-    #sort by due date + priority
-    sorted_tasks = sorted(
-        self.tasks,
-        key=lambda t: (
-            datetime.strptime(t.due_date, "%Y-%m-%d"),
-            t.priority
-        )
-    )
-
-    time_left = self.available_time
-
-    for task in sorted_tasks:
-        if not task.completed and
-task.estimated_time <= time_left:
-            print(
-                f"Study {task.title}"
-                f"({task.estimated_time} mins)"
+    def remove_task(self, title):
+        for task in self.tasks:
+            if task.title == title:
+                self.tasks.remove(task)
+ 
+    def show_tasks(self):
+        print("\n--- Task Dashboard ---")
+        for task in sorted(self.tasks, key=lambda t: t.due_date):
+            task.display()
+ 
+    def suggest_schedule(self):
+        print("\n--- Suggested Study Schedule ---")
+ 
+        #sort by due date + priority
+        sorted_tasks = sorted(
+            self.tasks,
+            key=lambda t: (
+                datetime.strptime(t.due_date, "%Y-%m-%d"),
+                t.priority
             )
-            time_left -= task.estimated_time 
+        )
+ 
+        time_left = self.available_time
+ 
+        for task in sorted_tasks:
+            if not task.completed and task.estimated_time <= time_left:
+                print(
+                    f"Study {task.title}"
+                    f"({task.estimated_time} mins)"
+                )
+                time_left -= task.estimated_time
+
+
+user = User("Alex", 120)
+
+hw1 = HomeworkTask(
+    "Math WorkSheet",
+    "2026-06-05",
+    1,
+    "Math",
+    60
+)
+
+user.add_task(hw1)
+
+user.show_tasks()
+user.suggest_schedule()
