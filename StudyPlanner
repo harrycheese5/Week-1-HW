@@ -51,3 +51,44 @@ class ProjectTask(Task):
     )
 
 # User class
+class User: 
+    def __init__(self, name, available_time):
+    self.name = name
+    self.available_time = available_time
+    self.tasks = []
+
+def add_task(self, task):
+    self.tasks.append(task)
+
+def remove_task(self, title):
+    for task in self.tasks:
+        if task.title == title:
+            self.tasks.remove(task)
+
+def show_tasks(self);
+    print("/n--- Task Dashboard ---")
+    for task in sorted(self.tasks, key=lambda t: t.due_date):
+        task.display()
+
+def suggest_schedule(self):
+    print("/n--- Suggested Study Schedule ---")
+
+    #sort by due date + priority
+    sorted_tasks = sorted(
+        self.tasks,
+        key=lambda t: (
+            datetime.strptime(t.due_date, "%Y-%m-%d"),
+            t.priority
+        )
+    )
+
+    time_left = self.available_time
+
+    for task in sorted_tasks:
+        if not task.completed and
+task.estimated_time <= time_left:
+            print(
+                f"Study {task.title}"
+                f"({task.estimated_time} mins)"
+            )
+            time_left -= task.estimated_time 
